@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DoorStride Rider Guide</title>
+<meta name="description" content="How to sign up, take orders, deliver and get paid as a DoorStride rider.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DoorStride Rider Guide">
+<meta property="og:description" content="How to sign up, take orders, deliver and get paid as a DoorStride rider.">
+<meta property="og:url" content="https://yael1510.github.io/doorstride-riders/">
+<meta property="og:image" content="https://doorstride.expo.app/icon-512.png">
+<meta name="theme-color" content="#2459d6">
+<link rel="icon" href="https://doorstride.expo.app/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="https://doorstride.expo.app/apple-touch-icon.png">
+<link rel="alternate" hreflang="fil" href="https://yael1510.github.io/doorstride-riders/fil/">
+<style>*{box-sizing:border-box} :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} img{max-width:100%}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,700&display=swap">
+<style>
+/* One phone-width column: a route of numbered stops down the page, like the rider's own job card. */
+:root {
+  --bg: #eef3fb; --card: #ffffff; --fg: #12203a; --muted: #56657e; --line: #d5dfee;
+  --blue: #2459d6; --blue-soft: #e3ebfb; --on-blue: #ffffff; --navy: #0f1b2d; --ok: #10805a; --warn: #a6620a; --warn-soft: #fdf1df;
+  --sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0c1424; --card: #142036; --fg: #e7eefa; --muted: #9aaac4; --line: #24344f;
+  --blue: #6d9bff; --blue-soft: #1b2b4a; --on-blue: #0b1222; --navy: #e7eefa; --ok: #4fd1a1; --warn: #f2b45a; --warn-soft: #2e2516; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0c1424; --card: #142036; --fg: #e7eefa; --muted: #9aaac4; --line: #24344f;
+  --blue: #6d9bff; --blue-soft: #1b2b4a; --on-blue: #0b1222; --navy: #e7eefa; --ok: #4fd1a1; --warn: #f2b45a; --warn-soft: #2e2516; color-scheme: dark; }
+body { background: var(--bg); color: var(--fg); font: 500 15.5px/1.55 var(--sans);
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 48px; }
+main { max-width: 640px; margin: 0 auto; display: grid; gap: 22px; }
+header { background: var(--blue); color: var(--on-blue); margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px))); padding: 34px max(16px, env(safe-area-inset-left, 0px)) 30px; }
+header .in { max-width: 640px; margin: 0 auto; display: grid; gap: 8px; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.brand { font-weight: 800; letter-spacing: 0.01em; opacity: 0.92; }
+.lang { color: var(--on-blue); font-weight: 700; font-size: 0.85rem; text-decoration: none; border: 1.5px solid currentColor; border-radius: 99px; padding: 4px 12px; opacity: 0.95; }
+.lang:focus-visible { outline: 3px solid var(--on-blue); outline-offset: 2px; }
+h1 { font-size: clamp(1.7rem, 6vw, 2.2rem); line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 em { font-style: italic; font-weight: 700; }
+header p { margin: 0; opacity: 0.92; max-width: 52ch; }
+h2 { font-size: 1.22rem; margin: 0; text-wrap: balance; display: flex; align-items: center; gap: 10px; }
+h2 .tag { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); background: var(--blue-soft); padding: 3px 9px; border-radius: 99px; }
+section { display: grid; gap: 12px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; display: grid; gap: 10px; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+ul.ticks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+ul.ticks li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; }
+ul.ticks li::before { content: "✓"; color: var(--ok); font-weight: 800; }
+/* The delivery itself: a route line with lettered stops, the way the app draws A and B. */
+ol.route { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+ol.route li { display: grid; grid-template-columns: 34px 1fr; gap: 12px; position: relative; padding-bottom: 16px; }
+ol.route li::after { content: ""; position: absolute; left: 16px; top: 34px; bottom: 0; width: 2px; background: var(--line); }
+ol.route li:last-child::after { display: none; }
+.dot { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--blue); color: var(--on-blue); font-weight: 800; font-size: 0.9rem; z-index: 1; font-variant-numeric: tabular-nums; }
+.dot.b { background: var(--navy); color: var(--card); }
+.step { min-width: 0; display: grid; gap: 4px; padding-top: 5px; }
+.step strong { font-weight: 700; }
+.btn { display: inline-block; font-weight: 700; font-size: 0.86rem; background: var(--blue-soft); color: var(--blue); padding: 1px 8px; border-radius: 7px; white-space: nowrap; }
+/* Money: the same split the rider sees on every order. */
+.split { display: grid; gap: 6px; font-variant-numeric: tabular-nums; }
+.split div { display: flex; justify-content: space-between; gap: 12px; }
+.split .total { border-top: 1px solid var(--line); padding-top: 6px; font-weight: 800; }
+.split .minus { color: var(--muted); }
+.big { font-size: 1.6rem; font-weight: 800; color: var(--blue); font-variant-numeric: tabular-nums; }
+.note { background: var(--warn-soft); border-color: transparent; }
+.note strong { color: var(--warn); }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.contact { display: grid; gap: 6px; }
+.contact a { color: var(--blue); font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
+.contact a:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+footer { text-align: center; color: var(--muted); font-size: 0.85rem; }
+</style>
+
+</head>
+<body>
+<main>
+  <header>
+    <div class="in">
+      <div class="top"><span class="brand">DoorStride · Rider</span><a class="lang" href="fil/" lang="fil">Basahin sa Filipino</a></div>
+      <h1>Your first day, <em>step by step.</em></h1>
+      <p>Everything you need to start delivering with DoorStride in San Isidro, Gapan, Jaen, San Leonardo, Cabiao and San Antonio. Open daily, 6:00 AM – 11:00 PM.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="tag">Before day 1</span> Get set up</h2>
+    <div class="card">
+      <ul class="ticks">
+        <li><span>Go to <strong>doorstride.expo.app</strong>, tap <span class="btn">Create an account</span> and choose <strong>Rider</strong>. Enter your name, mobile number, email, motorcycle plate number and driver’s license number.</span></li>
+        <li><span>Upload clear photos of your <strong>driver’s license</strong>, a <strong>valid government ID</strong> and your <strong>motorcycle</strong>. Then wait for the admin to approve you; tap <span class="btn">Check status</span> to see if you’re in. If something needs fixing, the admin leaves a note and you can resubmit.</span></li>
+        <li><span><strong>Add DoorStride to your home screen</strong> (Chrome: menu ⋮ → Add to Home screen; iPhone Safari: Share → Add to Home Screen) and open it from the icon.</span></li>
+        <li><span>Tap <span class="btn">Turn on alerts</span>, then <span class="btn">Test sound</span>. You should hear the new-order chime. Keep your phone off silent while you’re online.</span></li>
+        <li><span><strong>Allow location</strong> and keep GPS on. Customers follow you on the map, and new orders go to the nearest rider.</span></li>
+        <li><span>In <strong>Account</strong>, add your <strong>GCash</strong> or <strong>Maya</strong> number so customers can pay you by e-wallet.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="tag">Getting orders</span> Go online</h2>
+    <div class="card">
+      <p>On <strong>Jobs</strong>, switch on <span class="btn">You’re online</span>. When an order near you comes in, you hear the chime and get an offer. <strong>You have 30 seconds to accept</strong>; if you pass, it goes to the next rider. Orders nobody took show under <strong>Open orders</strong>, and you can take one from there.</p>
+      <p class="muted">You carry one delivery at a time. Food from a partner store comes to you once the store has accepted it, timed so you arrive when it’s ready.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="tag">The delivery</span> From A to B</h2>
+    <div class="card">
+      <ol class="route">
+        <li><div class="dot">1</div><div class="step"><strong>Accept</strong><span class="muted">The order moves to <strong>Current delivery</strong>, with the pickup (A), any extra stops, and the drop-off (B).</span></div></li>
+        <li><div class="dot">2</div><div class="step"><strong>Navigate to the pickup</strong><span class="muted">Tap <span class="btn">Start navigation</span> for turn-by-turn directions inside the app (spoken turns, the map follows you), or use <span class="btn">Google Maps</span> or <span class="btn">Waze</span>. Keep DoorStride open while riding.</span></div></li>
+        <li><div class="dot">A</div><div class="step"><strong>At the pickup, tap <span class="btn">I’m at the pickup</span></strong><span class="muted">For <strong>Pabili</strong>, buy the items with your own cash; you get it back from the customer. If something is out of stock, follow the customer’s choice shown on the order (replace it, skip it, or call them first).</span></div></li>
+        <li><div class="dot">3</div><div class="step"><strong>Tap <span class="btn">Picked up</span></strong><span class="muted">With extra stops, go through each one first; the button says when you’ve picked up from all of them. Navigation switches to the drop-off by itself.</span></div></li>
+        <li><div class="dot b">B</div><div class="step"><strong>At the drop-off, tap <span class="btn">I’m at the drop-off</span></strong><span class="muted">Can’t find the customer? Use <span class="btn">Message customer</span> or call the number on the order. If they shared their live location, directions go straight to them.</span></div></li>
+        <li><div class="dot">4</div><div class="step"><strong>Collect and complete</strong><span class="muted">Collect the exact amount shown (cash, GCash or Maya). Tap <span class="btn">Complete delivery</span>, <strong>take a photo of the delivered item</strong> (required), add the recipient’s signature if you can, then <span class="btn">Mark delivered</span>.</span></div></li>
+      </ol>
+    </div>
+    <div class="card note">
+      <p><strong>Camera not working?</strong> If the camera is blocked or won’t open, a <span class="btn">Choose from gallery</span> button appears so you can still add the photo.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="tag">Money</span> What you earn</h2>
+    <div class="grid2">
+      <div class="card">
+        <p>You keep <strong>75% of every delivery fee</strong>. DoorStride’s share is 25%. <strong>Tips are 100% yours.</strong> If the customer used a promo, DoorStride covers it; your earning doesn’t change.</p>
+        <p class="muted">Delivery fee: ₱60 for the first 2 km, then ₱15 per km, plus ₱15 for each extra stop.</p>
+      </div>
+      <div class="card">
+        <p class="muted">Example: Pabili, 2.2 km, ₱149 of items</p>
+        <div class="split">
+          <div><span>Delivery fee</span><span>₱75.00</span></div>
+          <div class="minus"><span>DoorStride (25%)</span><span>− ₱18.75</span></div>
+          <div class="total"><span>You earn</span><span class="big">₱56.25</span></div>
+          <div class="minus"><span>You collect from the customer</span><span>₱224.00</span></div>
+          <div class="minus"><span>…of which DoorStride’s share</span><span>₱18.75</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="card note">
+      <p><strong>Remit every day.</strong> At the end of each day, hand DoorStride’s share of your cash orders to the admin, <strong>in person or by GCash</strong>. The Earnings tab shows exactly how much. If you owe more than the cash limit, new orders pause until you remit.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="tag">Good to know</span> Ride safe, ride smart</h2>
+    <div class="card">
+      <ul class="ticks">
+        <li><span>Use a phone mount, and only tap the screen when you’ve stopped. Spoken turns let you keep your eyes on the road.</span></li>
+        <li><span>Keep DoorStride open while delivering. Switching apps or locking the screen pauses directions and your live location.</span></li>
+        <li><span>A red “location isn’t being shared” message means your GPS is off or weak. Turn on high-accuracy location.</span></li>
+        <li><span>Be polite, wear your helmet, and handle food upright. Customers rate every delivery.</span></li>
+        <li><span>Go offline when you take a break, so offers go to riders who can take them.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="tag">Help</span> Need a hand?</h2>
+    <div class="card contact">
+      <p>Message our Facebook Page or call us, daily 6:00 AM – 11:00 PM.</p>
+      <a href="https://www.facebook.com/doorstride" target="_blank" rel="noopener">facebook.com/doorstride</a>
+      <span>Mobile: <strong>0963 267 0131</strong></span>
+      <span>Email: <strong>doorstride.official@gmail.com</strong></span>
+    </div>
+  </section>
+
+  <footer>DoorStride · Every door, in stride.</footer>
+</main>
+</body>
+</html>
